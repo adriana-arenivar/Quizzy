@@ -24,7 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SignupActivity extends AppCompatActivity {
+public class Signup extends AppCompatActivity {
     public static final String TAG = "TAG";
     private EditText mName, mEmail, mPassword, mRePassword, mAvatar;
     Button mSignUpButton;
@@ -86,13 +86,13 @@ public class SignupActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (TextUtils.isEmpty(rPassword)) {
-                    mRePassword.setError("Must reenter password");
+                if (password.length() < 6) {
+                    mPassword.setError("Password must be greater than 6 characters");
                     return;
                 }
 
-                if (password.length() < 6) {
-                    mPassword.setError("Password must be greater than 6 characters");
+                if (TextUtils.isEmpty(rPassword)) {
+                    mRePassword.setError("Must reenter password");
                     return;
                 }
 
@@ -103,7 +103,7 @@ public class SignupActivity extends AppCompatActivity {
 
                 fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(SignupActivity.this, "User profile created", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Signup.this, "User profile created", Toast.LENGTH_SHORT).show();
                         userid = fAuth.getCurrentUser().getUid();
                         DocumentReference documentReference = fStore.collection("users").document(userid);
                         Map<String, Object> user = new HashMap<>();
@@ -122,7 +122,7 @@ public class SignupActivity extends AppCompatActivity {
                         });
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     } else {
-                        Toast.makeText(SignupActivity.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Signup.this, "Error! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -131,7 +131,7 @@ public class SignupActivity extends AppCompatActivity {
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
             }
         });
     }

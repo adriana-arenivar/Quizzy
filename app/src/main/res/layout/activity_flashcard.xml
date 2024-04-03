@@ -30,22 +30,50 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/white_button_pink_border"
         android:ems="10"
+        android:gravity="start|top"
         android:hint="@string/flashcard_def_input"
         android:inputType="textMultiLine"
         android:padding="10dp"
         android:textSize="15sp"
-        android:gravity="start|top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flashcardTermInput" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/flashSubmitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/white_button_yellow_border"
         android:text="@string/flashcard_submit"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="622dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flashcardDefinitionInput" />
+
+    <Button
+        android:id="@+id/flashDoneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/white_button_yellow_border"
+        android:text="@string/flash_done_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flashcardDefinitionInput" />
+
+    <TextView
+        android:id="@+id/flashTermDef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/flash_term_def"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

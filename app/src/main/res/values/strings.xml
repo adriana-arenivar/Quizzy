@@ -55,4 +55,6 @@
     <string name="profile_title">Profile</string>
     <string name="profile_user_name">User name</string>
     <string name="profile_email">Your email</string>
+    <string name="flash_term_def">Term/Definition</string>
+    <string name="flash_done_button">DONE</string>
 </resources>

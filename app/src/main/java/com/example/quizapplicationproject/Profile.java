@@ -13,7 +13,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
-public class ProfileActivity extends AppCompatActivity {
+public class Profile extends AppCompatActivity {
     TextView pName, pEmail;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.QuizApplicationProject"
         tools:targetApi="31">
 
-        <activity android:name=".SignupActivity"
+        <activity android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,16 +26,20 @@
             <!-- No intent-filter here, as this is not the entry point -->
         </activity>
 
-        <activity android:name=".LoginActivity"
+        <activity android:name=".Signup"
             android:exported="true">
             <!-- No intent-filter here, as this is not the entry point -->
         </activity>
 
-        <activity android:name=".ProfileActivity"
+        <activity android:name=".Profile"
             android:exported="true">
             <!-- No intent-filter here, as this is not the entry point -->
         </activity>
 
+        <activity android:name=".CreateQuiz"
+            android:exported="true">
+            <!-- No intent-filter here, as this is not the entry point -->
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
