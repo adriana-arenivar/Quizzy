@@ -8,11 +8,11 @@
 
     <TextView
         android:id="@+id/createQuizTitle"
+        android:text="@string/create_quiz_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
         android:fontFamily="sans-serif-black"
-        android:text="@string/create_quiz_title"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -51,4 +51,8 @@
     <string name="flashcard_def_input">Definition</string>
     <string name="flashcard_submit">Submit</string>
     <string name="setup_signup_button">SIGN UP</string>
+    <string name="setup_login"><u>Already have an account, sign in.</u></string>
+    <string name="profile_title">Profile</string>
+    <string name="profile_user_name">User name</string>
+    <string name="profile_email">Your email</string>
 </resources>
