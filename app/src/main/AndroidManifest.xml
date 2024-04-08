@@ -41,6 +41,36 @@
             <!-- No intent-filter here, as this is not the entry point -->
         </activity>
 
+        <activity android:name=".TermDefinition"
+            android:exported="true">
+            <!-- No intent-filter here, as this is not the entry point -->
+        </activity>
+
+        <activity android:name=".SetDisplayForStudy"
+            android:exported="true">
+            <!-- No intent-filter here, as this is not the entry point -->
+        </activity>
+
+        <activity android:name=".Study"
+            android:exported="true">
+            <!-- No intent-filter here, as this is not the entry point -->
+        </activity>
+
+        <activity android:name=".Stats"
+            android:exported="true">
+            <!-- No intent-filter here, as this is not the entry point -->
+        </activity>
+
+        <activity android:name=".Edit"
+            android:exported="true">
+            <!-- No intent-filter here, as this is not the entry point -->
+        </activity>
+
+        <activity android:name=".SetDisplayForEdit"
+            android:exported="true">
+            <!-- No intent-filter here, as this is not the entry point -->
+        </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

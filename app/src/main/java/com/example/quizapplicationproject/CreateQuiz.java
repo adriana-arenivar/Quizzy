@@ -16,8 +16,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.ArrayList;
 public class CreateQuiz extends AppCompatActivity {
     Button cNext;
     EditText cTitle, cSubject;
@@ -26,7 +24,7 @@ public class CreateQuiz extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_quiz);
+        setContentView(R.layout.activity_create1);
 
         cNext = findViewById(R.id.createNextButton);
         cTitle = findViewById(R.id.createTitleInput);
@@ -52,7 +50,7 @@ public class CreateQuiz extends AppCompatActivity {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         if (currentUser != null) {
-            FlashcardSet set = new FlashcardSet(setName, new ArrayList<>());
+            FlashcardSet set = new FlashcardSet(setName);
 
             db.collection("users")
                     .document(currentUser.getUid())
@@ -62,7 +60,11 @@ public class CreateQuiz extends AppCompatActivity {
                         @Override
                         public void onSuccess(DocumentReference documentReference) {
                             Toast.makeText(CreateQuiz.this, "Set created successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), TermDefinition.class));
+                            // Inside your onSuccess method after creating the set
+                            String documentId = documentReference.getId(); // Get the document ID of the newly created set
+                            Intent intent = new Intent(CreateQuiz.this, TermDefinition.class);
+                            intent.putExtra("FLASHCARD_SET_ID", documentId); // Pass the document ID to AddCardActivity
+                            startActivity(intent);
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
